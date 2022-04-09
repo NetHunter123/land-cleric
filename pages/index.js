@@ -1,261 +1,167 @@
 import Link from "next/dist/client/link";
+import { useState } from "react";
 import Slider from "react-slick";
 import Counter from "../src/components/Counter";
+import VideoPopup from "../src/components/VideoPopup";
 import Layout from "../src/layouts/Layout";
-import { projectSliderOne, projectSliderTwo } from "../src/sliderProps";
+import { imageTextBlockSlider } from "../src/sliderProps";
 
-const Index = () => {
+const Index2 = () => {
+  const [video, setVideo] = useState(false);
   return (
-    <Layout transparentHeader transparentTop footerSolidBg>
-      <section className="hero-area-one">
-        <div className="hero-text">
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-xl-10">
-                <span className="tagline wow fadeInUp" data-wow-delay="0.3s">
-                  Crowdfounding Agency
-                </span>
-                <h1 className="title wow fadeInUp" data-wow-delay="0.4s">
-                  Raise Hand to Promote Best Products
+    <Layout transparentHeader topSecondaryBg>
+      {video && <VideoPopup close={setVideo} />}
+      <section className="hero-area-two">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 col-md-8 col-sm-11">
+              <div className="hero-text">
+                <h1 className="title wow fadeInLeft" data-wow-delay="0.2s">
+                  SYHM 525O VR Box Smart Phone VR Box
                 </h1>
-                <Link href="/project-1">
-                  <a className="main-btn wow fadeInUp" data-wow-delay="0.5s">
-                    Explore Projects <i className="far fa-arrow-right" />
-                  </a>
-                </Link>
+                <p className="wow fadeInLeft" data-wow-delay="0.3s">
+                  Sedut perspiciatis unde omnis iste natus voluptatem
+                  accusantium dolore dantiumy totam rem apeam eaque ipsa
+                </p>
+                <ul className="hero-btn">
+                  <li className="wow fadeInUp" data-wow-delay="0.4s">
+                    <Link href="/project-2">
+                      <a className="main-btn">
+                        Explore Projects <i className="far fa-arrow-right" />
+                      </a>
+                    </Link>
+                  </li>
+                  <li className="wow fadeInUp" data-wow-delay="0.5s">
+                    <a
+                      href="#"
+                      className="video-btn"
+                      onClick={() => setVideo(true)}
+                    >
+                      <i className="fas fa-play" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              className="col-lg-6 col-md-8 col-sm-10 mx-auto wow fadeInRight"
+              data-wow-delay="0.2s"
+            >
+              <div className="hero-img text-lg-right">
+                <img src="assets/img/hero/hero-two-img.png" alt="Img" />
               </div>
             </div>
           </div>
-          <div className="hero-shapes">
-            <div className="hero-line-one">
-              <img src="assets/img/hero/hero-line.png" alt="Line" />
-            </div>
-            <div className="hero-line-two">
-              <img src="assets/img/hero/hero-line-2.png" alt="Line" />
-            </div>
-            <div className="dot-one" />
-            <div className="dot-two" />
-          </div>
         </div>
-        <div className="hero-images">
-          <div
-            className="hero-img image-small fancy-bottom wow fadeInLeft"
-            data-wow-delay="0.6s"
-          >
-            <img src="assets/img/hero/hero-one-small.jpg" alt="Image" />
+        <div className="hero-shapes">
+          <div className="hero-line-one">
+            <img src="assets/img/hero/hero-line-3.png" alt="Line" />
           </div>
-          <div className="hero-img main-img wow fadeInUp" data-wow-delay="0.5s">
-            <img src="assets/img/hero/hero-one-big.jpg" alt="Image" />
+          <div className="hero-line-two">
+            <img src="assets/img/hero/hero-line-2.png" alt="Line" />
           </div>
-          <div
-            className="hero-img image-small fancy-top wow fadeInRight"
-            data-wow-delay="0.7s"
-          >
-            <img src="assets/img/hero/hero-one-small-2.jpg" alt="Image" />
-          </div>
+          <div className="dot-one" />
+          <div className="dot-two" />
         </div>
       </section>
       {/*====== Hero Area End ======*/}
-      {/*====== Categories Section Start ======*/}
-      <section className="popular-categories section-gap">
-        <div className="container">
-          <div className="categories-header">
-            <div className="row align-items-center justify-content-between">
-              <div className="col-auto">
-                <div className="common-heading mb-30">
-                  <span className="tagline">
-                    <i className="fas fa-plus" /> what we do
-                    <span className="heading-shadow-text">Category</span>
-                  </span>
-                  <h2 className="title">Popular Categories</h2>
+      {/*====== About Section Start ======*/}
+      <section className="about-section-two">
+        <div className="about-form-area">
+          <div className="container">
+            <div className="about-donation-form">
+              <div className="donation-heading">
+                <h3 className="title">Rise Your Hand</h3>
+                <span className="shadow-text">Support</span>
+              </div>
+              <form onSubmit={(e) => e.preventDefault()} action="#">
+                <div className="form-wrap">
+                  <ul className="donation-amount">
+                    <li>$5</li>
+                    <li>$50</li>
+                    <li>$180</li>
+                    <li>$500</li>
+                    <li>$1000</li>
+                  </ul>
+                  <button type="submit" className="main-btn btn-white">
+                    Donate Now <i className="far fa-arrow-right" />
+                  </button>
                 </div>
-              </div>
-              <div className="col-auto">
-                <Link href="/project-1">
-                  <a className="main-btn mb-30">
-                    View All Category <i className="far fa-angle-right" />
-                  </a>
-                </Link>
-              </div>
+              </form>
+            </div>
+            <div className="about-video wow fadeInDown" data-wow-delay="0.2s">
+              <a href="#" className="video-btn" onClick={() => setVideo(true)}>
+                <i className="fas fa-play" />
+              </a>
             </div>
           </div>
-          <div className="row justify-content-center fancy-icon-boxes">
-            <div
-              className="col-xl-4 col-md-6 col-sm-10 wow fadeInUp"
-              data-wow-delay="0s"
-            >
-              <div className="fancy-box-item mt-30">
-                <div className="icon">
-                  <i className="flaticon-reading-book" />
-                </div>
-                <div className="content">
-                  <h4 className="title">
-                    <Link href="/project-details">
-                      <a>Education</a>
-                    </Link>
-                  </h4>
-                  <p>School, Collage &amp; University</p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-xl-4 col-md-6 col-sm-10 wow fadeInUp"
-              data-wow-delay="0.1s"
-            >
-              <div className="fancy-box-item mt-30">
-                <div className="icon">
-                  <i className="flaticon-stethoscope" />
-                </div>
-                <div className="content">
-                  <h4 className="title">
-                    <Link href="/project-details">
-                      <a>Medical &amp; Health</a>
-                    </Link>
-                  </h4>
-                  <p>School, Collage &amp; University</p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-xl-4 col-md-6 col-sm-10 wow fadeInUp"
-              data-wow-delay="0.2s"
-            >
-              <div className="fancy-box-item mt-30">
-                <div className="icon">
-                  <i className="flaticon-tshirt-1" />
-                </div>
-                <div className="content">
-                  <h4 className="title">
-                    <Link href="/project-details">
-                      <a>Clothes</a>
-                    </Link>
-                  </h4>
-                  <p>School, Collage &amp; University</p>
+        </div>
+        <div className="about-text-area">
+          <div className="container">
+            <div className="row align-items-end justify-content-xl-start">
+              <div className="col-xl-5 col-lg-7 col-md-8 order-xl-2">
+                <div className="about-text">
+                  <div className="common-heading mb-30">
+                    <span className="tagline">
+                      <i className="fas fa-plus" /> About us
+                      <span className="heading-shadow-text">About Us</span>
+                    </span>
+                    <h2 className="title">
+                      We Help How To Improve Product Marketing
+                    </h2>
+                  </div>
+                  <p>
+                    Sedut perspiciatis unde omnis iste natus voluptatem accusan
+                    tium dolore dantiumy totam rem apeam, eaque ipsa quaventore
+                    veritatis quasi architecto beatae.
+                  </p>
+                  <ul className="check-list mt-30">
+                    <li>
+                      <h5 className="title">Highest Success Rates</h5>
+                      <p>Quis autem vel eum iure reprehenderit quin</p>
+                    </li>
+                    <li>
+                      <h5 className="title">Raise Funds With Crowdfunding</h5>
+                      <p>Voluptate esse quam nihil molestiae consequatur</p>
+                    </li>
+                    <li>
+                      <h5 className="title">Millions in Funding</h5>
+                      <p>Accusan tium dolore dantiumy totam apeam</p>
+                    </li>
+                  </ul>
+                  <Link href="/about">
+                    <a className="main-btn btn-dark mt-40">
+                      Learn More <i className="far fa-arrow-right" />
+                    </a>
+                  </Link>
                 </div>
               </div>
-            </div>
-            <div
-              className="col-xl-4 col-md-6 col-sm-10 wow fadeInUp"
-              data-wow-delay="0.3s"
-            >
-              <div className="fancy-box-item mt-30">
-                <div className="icon">
-                  <i className="flaticon-video-camera" />
-                </div>
-                <div className="content">
-                  <h4 className="title">
-                    <Link href="/project-details">
-                      <a>Video &amp; Films</a>
-                    </Link>
-                  </h4>
-                  <p>School, Collage &amp; University</p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-xl-4 col-md-6 col-sm-10 wow fadeInUp"
-              data-wow-delay="0.4s"
-            >
-              <div className="fancy-box-item mt-30">
-                <div className="icon">
-                  <i className="flaticon-project-management" />
-                </div>
-                <div className="content">
-                  <h4 className="title">
-                    <Link href="/project-details">
-                      <a>Technology</a>
-                    </Link>
-                  </h4>
-                  <p>School, Collage &amp; University</p>
-                </div>
-              </div>
-            </div>
-            <div
-              className="col-xl-4 col-md-6 col-sm-10 wow fadeInUp"
-              data-wow-delay="0.5s"
-            >
-              <div className="fancy-box-item mt-30">
-                <div className="icon">
-                  <i className="flaticon-salad" />
-                </div>
-                <div className="content">
-                  <h4 className="title">
-                    <Link href="/project-details">
-                      <a>Organic Foods</a>
-                    </Link>
-                  </h4>
-                  <p>School, Collage &amp; University</p>
+              <div className="col-xl-5 order-xl-1 wow fadeInUp">
+                <div className="about-curved-img">
+                  <img src="assets/img/about/man-with-laptop.png" alt="Image" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      {/*====== Categories Section End ======*/}
-      {/*====== About Section Start ======*/}
-      <section className="about-section-one">
-        <div className="container">
-          <div className="row align-items-center justify-content-lg-start justify-content-center">
-            <div className="col-xl-6 col-lg-7 col-md-9">
-              <div className="about-img">
-                <img src="assets/img/about/about-one.jpg" alt="Image" />
-              </div>
-            </div>
-            <div className="col-xl-4 col-lg-5 col-md-10 offset-xl-1">
-              <div className="about-text mt-md-70 mb-md-50">
-                <div className="common-heading mb-30">
-                  <span className="tagline">
-                    <i className="fas fa-plus" /> who we are
-                    <span className="heading-shadow-text">Abouit Us</span>
-                  </span>
-                  <h2 className="title">Why Choose Us</h2>
-                </div>
-                <p>
-                  Sedut perspiciatis unde omnis iste natus voluptatem
-                  accusantium dolore dantiumy totam rem apeam, eaque ipsa
-                  quaventore veritatis quasi architecto beatae.
-                </p>
-                <div className="author-note wow fadeInUp">
-                  <ul>
-                    <li>
-                      <i className="far fa-check" /> Non-Profite Crowdfunding
-                      Agency
-                    </li>
-                    <li>
-                      <i className="far fa-check" />{" "}
-                      {`We're Successful Institute`}{" "}
-                    </li>
-                  </ul>
-                  <div className="author-info">
-                    <div className="author-img">
-                      <img src="assets/img/author-thumbs/01.jpg" alt="Image" />
-                    </div>
-                    <h5 className="name">Michel H. Heart</h5>
-                    <span className="title">CEO &amp; Founder</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="about-shape">
+          <img src="assets/img/about/about-shape.png" alt="Shape" />
         </div>
       </section>
       {/*====== About Section End ======*/}
       {/*====== Project Section Start ======*/}
-      <section className="project-section project-section-extra-gap secondary-bg">
-        <div className="container-fluid fluid-extra-padding">
-          <div className="common-heading text-center color-version-white mb-60">
+      <section className="project-section project-section-two">
+        <div className="container fluid-extra-padding">
+          <div className="common-heading text-center color-version-white mb-30">
             <span className="tagline">
               <i className="fas fa-plus" /> Popular Projects
               <span className="heading-shadow-text">Our Projects</span>
             </span>
             <h2 className="title">Explore Our Projects</h2>
           </div>
-          <Slider
-            {...projectSliderOne}
-            className="row project-slider-one project-items project-style-one no-shadow"
-          >
-            <div className="col">
-              <div className="project-item">
+          <div className="row justify-content-center project-items project-style-one">
+            <div className="col-lg-4 col-md-6 col-sm-10">
+              <div className="project-item mt-30">
                 <div
                   className="thumb"
                   style={{
@@ -269,7 +175,7 @@ const Index = () => {
                   </div>
                   <div className="author">
                     <img src="assets/img/author-thumbs/01.jpg" alt="Thumb" />
-                    <Link href="/project-1">James W. Barrows</Link>
+                    <Link href="/project-details">James W. Barrows</Link>
                   </div>
                   <h5 className="title">
                     <Link href="/project-details">
@@ -296,8 +202,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
-              <div className="project-item">
+            <div className="col-lg-4 col-md-6 col-sm-10">
+              <div className="project-item mt-30">
                 <div
                   className="thumb"
                   style={{
@@ -311,7 +217,7 @@ const Index = () => {
                   </div>
                   <div className="author">
                     <img src="assets/img/author-thumbs/02.jpg" alt="Thumb" />
-                    <Link href="/project-1">James W. Barrows</Link>
+                    <Link href="/project-details">James W. Barrows</Link>
                   </div>
                   <h5 className="title">
                     <Link href="/project-details">
@@ -335,8 +241,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
-              <div className="project-item">
+            <div className="col-lg-4 col-md-6 col-sm-10">
+              <div className="project-item mt-30">
                 <div
                   className="thumb"
                   style={{
@@ -350,7 +256,7 @@ const Index = () => {
                   </div>
                   <div className="author">
                     <img src="assets/img/author-thumbs/03.jpg" alt="Thumb" />
-                    <Link href="/project-1">James W. Barrows</Link>
+                    <Link href="/project-details">James W. Barrows</Link>
                   </div>
                   <h5 className="title">
                     <Link href="/project-details">
@@ -377,8 +283,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
-              <div className="project-item">
+            <div className="col-lg-4 col-md-6 col-sm-10">
+              <div className="project-item mt-30">
                 <div
                   className="thumb"
                   style={{
@@ -392,7 +298,7 @@ const Index = () => {
                   </div>
                   <div className="author">
                     <img src="assets/img/author-thumbs/01.jpg" alt="Thumb" />
-                    <Link href="/project-1">James W. Barrows</Link>
+                    <Link href="/project-details">James W. Barrows</Link>
                   </div>
                   <h5 className="title">
                     <Link href="/project-details">
@@ -418,8 +324,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
-              <div className="project-item">
+            <div className="col-lg-4 col-md-6 col-sm-10">
+              <div className="project-item mt-30">
                 <div
                   className="thumb"
                   style={{
@@ -433,7 +339,7 @@ const Index = () => {
                   </div>
                   <div className="author">
                     <img src="assets/img/author-thumbs/02.jpg" alt="Thumb" />
-                    <Link href="/project-1">James W. Barrows</Link>
+                    <Link href="/project-details">James W. Barrows</Link>
                   </div>
                   <h5 className="title">
                     <Link href="/project-details">
@@ -459,8 +365,8 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
-              <div className="project-item">
+            <div className="col-lg-4 col-md-6 col-sm-10">
+              <div className="project-item mt-30">
                 <div
                   className="thumb"
                   style={{
@@ -474,7 +380,7 @@ const Index = () => {
                   </div>
                   <div className="author">
                     <img src="assets/img/author-thumbs/03.jpg" alt="Thumb" />
-                    <Link href="/project-1">James W. Barrows</Link>
+                    <Link href="/project-details">James W. Barrows</Link>
                   </div>
                   <h5 className="title">
                     <Link href="/project-details">
@@ -500,482 +406,364 @@ const Index = () => {
                 </div>
               </div>
             </div>
-            <div className="col">
-              <div className="project-item">
-                <div
-                  className="thumb"
-                  style={{
-                    backgroundImage:
-                      "url(assets/img/project/project-grid-07.jpg)",
-                  }}
-                />
-                <div className="content">
-                  <div className="cats">
-                    <Link href="/project-1">Technology</Link>
-                  </div>
-                  <div className="author">
-                    <img src="assets/img/author-thumbs/01.jpg" alt="Thumb" />
-                    <Link href="/project-1">James W. Barrows</Link>
-                  </div>
-                  <h5 className="title">
-                    <Link href="/project-details">
-                      <a>
-                        Fundraising For The People And Causes You Care About
-                      </a>
-                    </Link>
-                  </h5>
-                  <div className="project-stats">
-                    <div className="stats-value">
-                      <span className="value-title">
-                        Raised of <span className="value">$59,689</span>
-                      </span>
-                      <span className="stats-percentage">81%</span>
-                    </div>
-                    <div className="stats-bar" data-value={81}>
-                      <div className="bar-line" />
-                    </div>
-                  </div>
-                  <span className="date">
-                    <i className="far fa-calendar-alt" /> 25 February 2021
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="project-item">
-                <div
-                  className="thumb"
-                  style={{
-                    backgroundImage:
-                      "url(assets/img/project/project-grid-08.jpg)",
-                  }}
-                />
-                <div className="content">
-                  <div className="cats">
-                    <Link href="/project-1">Mobile Kits</Link>
-                  </div>
-                  <div className="author">
-                    <img src="assets/img/author-thumbs/02.jpg" alt="Thumb" />
-                    <Link href="/project-1">James W. Barrows</Link>
-                  </div>
-                  <h5 className="title">
-                    <Link href="/project-details">
-                      <a>
-                        COVID-19 Vaccine Have Already Begun Introduced Countries
-                      </a>
-                    </Link>
-                  </h5>
-                  <div className="project-stats">
-                    <div className="stats-value">
-                      <span className="value-title">
-                        Raised of <span className="value">$59,689</span>
-                      </span>
-                      <span className="stats-percentage">73%</span>
-                    </div>
-                    <div className="stats-bar" data-value={73}>
-                      <div className="bar-line" />
-                    </div>
-                  </div>
-                  <span className="date">
-                    <i className="far fa-calendar-alt" /> 25 February 2021
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="project-item">
-                <div
-                  className="thumb"
-                  style={{
-                    backgroundImage:
-                      "url(assets/img/project/project-grid-09.jpg)",
-                  }}
-                />
-                <div className="content">
-                  <div className="cats">
-                    <Link href="/project-1">Business</Link>
-                  </div>
-                  <div className="author">
-                    <img src="assets/img/author-thumbs/03.jpg" alt="Thumb" />
-                    <Link href="/project-1">James W. Barrows</Link>
-                  </div>
-                  <h5 className="title">
-                    <Link href="/project-details">
-                      <a>
-                        Mobile First Is Just Not Goodies Enough Meet Journey
-                      </a>
-                    </Link>
-                  </h5>
-                  <div className="project-stats">
-                    <div className="stats-value">
-                      <span className="value-title">
-                        Raised of <span className="value">$59,689</span>
-                      </span>
-                      <span className="stats-percentage">75%</span>
-                    </div>
-                    <div className="stats-bar" data-value={75}>
-                      <div className="bar-line" />
-                    </div>
-                  </div>
-                  <span className="date">
-                    <i className="far fa-calendar-alt" /> 25 February 2021
-                  </span>
-                </div>
-              </div>
-            </div>
-          </Slider>
+          </div>
         </div>
       </section>
       {/*====== Project Section End ======*/}
-      {/*====== Counter Area Start ======*/}
-      <section className="counter-section-one mt-negative">
-        <div className="container primary-bg">
-          <div className="row counter-boxes justify-content-xl-between justify-content-center">
-            <div className="col-xl-auto col-lg-5 col-md-5 col-sm-6">
-              <div className="counter-box mb-40 icon-left">
-                <div className="icon white-color">
-                  <i className="flaticon-crowdfunding" />
+      {/*====== Feature Section Start ======*/}
+      <section className="feature-section feature-section-one section-gap">
+        <div className="container">
+          <div className="row justify-content-lg-between justify-content-center align-items-center">
+            <div className="col-xl-4 col-lg-5 col-md-8 col-sm-10">
+              <div className="feature-content mb-md-50">
+                <div className="common-heading mb-45">
+                  <span className="tagline">
+                    <i className="fas fa-plus" /> What we do
+                    <span className="heading-shadow-text">Features</span>
+                  </span>
+                  <h2 className="title">Why Choose us</h2>
                 </div>
-                <div className="content white-color">
-                  <div className="count-wrap">
-                    <Counter end={3598} />
-                    <span className="suffix">+</span>
+                {/* Fancy Icon List */}
+                <div className="fancy-icon-list">
+                  <div className="fancy-list-item">
+                    <div className="icon">
+                      <i className="flaticon-debit-card" />
+                    </div>
+                    <div className="content">
+                      <h4 className="title">Fast &amp; Easy Payouts</h4>
+                      <p>
+                        Sed ut perspiciatis unde omnis iste natus voluptatem
+                        accusan doloremque
+                      </p>
+                    </div>
                   </div>
-                  <h6 className="title">We’ve Project Complate</h6>
+                  <div className="fancy-list-item">
+                    <div className="icon">
+                      <i className="flaticon-payment" />
+                    </div>
+                    <div className="content">
+                      <h4 className="title">Global Payment Processing</h4>
+                      <p>
+                        Sed ut perspiciatis unde omnis iste natus voluptatem
+                        accusan doloremque
+                      </p>
+                    </div>
+                  </div>
+                  <div className="fancy-list-item">
+                    <div className="icon">
+                      <i className="flaticon-wallet-1" />
+                    </div>
+                    <div className="content">
+                      <h4 className="title">Many Payment Options</h4>
+                      <p>
+                        Sed ut perspiciatis unde omnis iste natus voluptatem
+                        accusan doloremque
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="col-xl-auto col-lg-5 col-md-5 col-sm-6">
-              <div className="counter-box mb-40 icon-left">
-                <div className="icon white-color">
-                  <i className="flaticon-crowdfunding" />
-                </div>
-                <div className="content white-color">
-                  <div className="count-wrap">
-                    <Counter end={9634} />
-                    <span className="suffix">+</span>
-                  </div>
-                  <h6 className="title">Global Partners</h6>
-                </div>
+            <div className="col-lg-7 col-md-10">
+              <div className="funden-video with-video-shape">
+                <img src="assets/img/video/02.jpg" alt="Image" />
+                <a
+                  href="#"
+                  className="video-popup"
+                  onClick={() => setVideo(true)}
+                >
+                  <i className="fas fa-play" />
+                </a>
+                <img
+                  src="assets/img/video/video-shape.png"
+                  alt="Image"
+                  className="video-shape"
+                />
               </div>
             </div>
-            <div className="col-xl-auto col-lg-5 col-md-5 col-sm-6">
-              <div className="counter-box mb-40 icon-left">
-                <div className="icon white-color">
-                  <i className="flaticon-crowdfunding" />
-                </div>
-                <div className="content white-color">
-                  <div className="count-wrap">
-                    <Counter end={8565} />
-                    <span className="suffix">+</span>
+          </div>
+        </div>
+      </section>
+      {/*====== Feature Section End ======*/}
+      {/*====== Counter With Image Text Block Start ======*/}
+      <section className="counter-with-image-text-block">
+        <div className="image-text-block-area">
+          <div className="container">
+            <Slider
+              {...imageTextBlockSlider}
+              className="image-text-block-slider"
+            >
+              <div className="single-slider">
+                <div className="image-text-block text-block-one">
+                  <div className="block-img">
+                    <img src="assets/img/text-block/01.jpg" alt="Image" />
                   </div>
-                  <h6 className="title">Awards Winning</h6>
+                  <div className="block-content">
+                    <div className="common-heading mb-40">
+                      <span className="tagline">
+                        <i className="fas fa-plus" /> top Funding stories
+                        <span className="heading-shadow-text">Top Stories</span>
+                      </span>
+                      <h2 className="title">Meet William &amp; Michael</h2>
+                    </div>
+                    <p className="mb-30">
+                      Sed ut perspiciatis unde omnis iste natus error sit
+                      voluptatem accusantium doloremque laudantium totam rem
+                      aperiam eaque ipsa quae ab illo inventore veritatis et
+                      quasi architecto beatae vitae dicta sunt explicabo enim
+                      ipsam voluptatem
+                    </p>
+                    <p className="italic-text">
+                      On the other hand, we denounce with righteous indignation
+                      and dislike men who are so beguiled and demoralized
+                    </p>
+                    <Link href="/company-overview">
+                      <a className="main-btn bordered-btn mt-40">
+                        Learn More <i className="far fa-arrow-right" />
+                      </a>
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-xl-auto col-lg-5 col-md-5 col-sm-6">
-              <div className="counter-box mb-40 icon-left">
-                <div className="icon white-color">
-                  <i className="flaticon-crowdfunding" />
-                </div>
-                <div className="content white-color">
-                  <div className="count-wrap">
-                    <Counter end={4756} />
-                    <span className="suffix">+</span>
+              <div className="single-slider">
+                <div className="image-text-block text-block-one">
+                  <div className="block-img">
+                    <img src="assets/img/text-block/01.jpg" alt="Image" />
                   </div>
-                  <h6 className="title">Active Volunteer</h6>
+                  <div className="block-content">
+                    <div className="common-heading mb-40">
+                      <span className="tagline">
+                        <i className="fas fa-plus" /> top Funding stories
+                        <span className="heading-shadow-text">Top Stories</span>
+                      </span>
+                      <h2 className="title">Meet William &amp; Michael</h2>
+                    </div>
+                    <p className="mb-30">
+                      Sed ut perspiciatis unde omnis iste natus error sit
+                      voluptatem accusantium doloremque laudantium totam rem
+                      aperiam eaque ipsa quae ab illo inventore veritatis et
+                      quasi architecto beatae vitae dicta sunt explicabo enim
+                      ipsam voluptatem
+                    </p>
+                    <p className="italic-text">
+                      On the other hand, we denounce with righteous indignation
+                      and dislike men who are so beguiled and demoralized
+                    </p>
+                    <Link href="/company-overview">
+                      <a className="main-btn bordered-btn mt-40">
+                        Learn More <i className="far fa-arrow-right" />
+                      </a>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </Slider>
+          </div>
+        </div>
+        <div className="counter-boxes-area primary-soft-bg">
+          <div className="container">
+            <div className="row counter-boxes justify-content-lg-between justify-content-center">
+              <div className="col-xl-auto col-lg-3 col-md-6 col-sm-8">
+                <div className="counter-box mb-60">
+                  <div className="icon">
+                    <i className="flaticon-crowdfunding" />
+                  </div>
+                  <div className="content">
+                    <div className="count-wrap">
+                      <Counter end={3598} />
+                      <span className="suffix">+</span>
+                    </div>
+                    <h6 className="title">We’ve Project Complate</h6>
+                    <p>
+                      Sed ut perspiciatis unde <br /> menste natus error
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-xl-auto col-lg-3 col-md-6 col-sm-8">
+                <div className="counter-box mb-60">
+                  <div className="icon">
+                    <i className="flaticon-ecological" />
+                  </div>
+                  <div className="content">
+                    <div className="count-wrap">
+                      <Counter end={9634} />
+                      <span className="suffix">+</span>
+                    </div>
+                    <h6 className="title">Trusted Global Partners</h6>
+                    <p>
+                      Quis autem veleucmure <br /> reprehenderit quein
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-xl-auto col-lg-3 col-md-6 col-sm-8">
+                <div className="counter-box mb-60">
+                  <div className="icon">
+                    <i className="flaticon-badges" />
+                  </div>
+                  <div className="content">
+                    <div className="count-wrap">
+                      <Counter end={8565} />
+                      <span className="suffix">+</span>
+                    </div>
+                    <h6 className="title">Global Awards Winning</h6>
+                    <p>
+                      Sed ut perspiciatis unde <br /> menste natus error
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-xl-auto col-lg-3 col-md-6 col-sm-8">
+                <div className="counter-box mb-60">
+                  <div className="icon">
+                    <i className="flaticon-support" />
+                  </div>
+                  <div className="content">
+                    <div className="count-wrap">
+                      <Counter end={4756} />
+                      <span className="suffix">+</span>
+                    </div>
+                    <h6 className="title">24/7 Active Volunteer</h6>
+                    <p>
+                      Quis autem veleucmure <br /> reprehenderit quein
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/*====== Counter Area End ======*/}
+      {/*====== Counter With Image Text Block End ======*/}
       {/*====== Testimonials Start ======*/}
       <section className="testimonials-section section-gap">
         <div className="container">
-          <div className="row align-items-center justify-content-center">
-            <div className="col-xl-4 col-lg-6 col-md-8 col-sm-10">
-              <div className="testimonials-content mb-lg-50">
-                <div className="common-heading mb-30">
-                  <span className="tagline">
-                    <i className="fas fa-plus" /> clients Feedback
-                    <span className="heading-shadow-text">Testimonials</span>
-                  </span>
-                  <h2 className="title">Why Choose Us</h2>
-                </div>
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudan totam rem aperiam eaque ipsa
-                  quae abillo inventore verit quasi architecto beatae vitae
-                  dicta sunt
-                </p>
-                <Link href="/testimonial">
-                  <a className="main-btn mt-35">
-                    View All Reviews <i className="far fa-arrow-right" />
-                  </a>
-                </Link>
-                <div
-                  className="testimonial-author-boxes wow fadeInUp"
-                  data-wow-delay="0.2s"
-                >
-                  <h6>Most Popular Clients</h6>
-                  <ul className="author-images">
-                    <li
-                      data-tooltip="true"
-                      data-placement="top"
-                      data-original-title="Donald L. Juarez"
-                    >
-                      <a href="#">
-                        <img
-                          src="assets/img/author-thumbs/01.jpg"
-                          alt="user one"
-                        />
-                      </a>
-                    </li>
-                    <li
-                      data-tooltip="true"
-                      data-placement="top"
-                      data-original-title="Evan A. Ethridge"
-                    >
-                      <a href="#">
-                        <img
-                          src="assets/img/author-thumbs/02.jpg"
-                          alt="user one"
-                        />
-                      </a>
-                    </li>
-                    <li
-                      data-tooltip="true"
-                      data-placement="top"
-                      data-original-title="Donald L. Lewis"
-                    >
-                      <a href="#">
-                        <img
-                          src="assets/img/author-thumbs/03.jpg"
-                          alt="user one"
-                        />
-                      </a>
-                    </li>
-                    <li
-                      data-tooltip="true"
-                      data-placement="top"
-                      data-original-title="Marcus L. Duncan"
-                    >
-                      <a href="#">
-                        <img
-                          src="assets/img/author-thumbs/04.jpg"
-                          alt="user one"
-                        />
-                      </a>
-                    </li>
-                    <li
-                      data-tooltip="true"
-                      data-placement="top"
-                      data-original-title="Evan A. Ethridge"
-                    >
-                      <a href="#">
-                        <img
-                          src="assets/img/author-thumbs/05.jpg"
-                          alt="user one"
-                        />
-                      </a>
-                    </li>
-                    <li
-                      data-tooltip="true"
-                      data-placement="top"
-                      data-original-title="M. Jon Doe"
-                    >
-                      <a href="#">
-                        <img
-                          src="assets/img/author-thumbs/06.jpg"
-                          alt="user one"
-                        />
-                      </a>
-                    </li>
-                    <li
-                      data-tooltip="true"
-                      data-placement="top"
-                      data-original-title="More"
-                    >
-                      <a href="#" className="more-icon">
-                        <i className="far fa-plus" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+          <div className="row justify-content-center">
             <div className="col-xl-8 col-lg-10">
-              <div className="testimonial-boxes square-shape">
-                <div className="row  justify-content-center">
-                  <div className="col-lg-6 col-md-6 col-sm-10">
-                    <div
-                      className="testimonial-box-one wow fadeInUp"
-                      data-wow-delay="0s"
-                    >
-                      <div className="author-info">
-                        <div className="author-img">
-                          <img
-                            src="assets/img/author-thumbs/01.jpg"
-                            alt="Thumb"
-                          />
-                        </div>
-                        <div>
-                          <h5 className="name">Howard A. Guest</h5>
-                          <p className="position">Web Developer</p>
-                        </div>
-                      </div>
-                      <p className="testimonial-desc">
-                        Quis autem vel eum reprehenderit quiea voluptate velit
-                        essenih lestiae conseqatur veillum dolorem
-                      </p>
-                      <div className="rating-wrap">
-                        <span>Rating</span>
-                        <ul>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div
-                      className="testimonial-box-one mt-30 wow fadeInUp"
-                      data-wow-delay="0.1s"
-                    >
-                      <div className="author-info">
-                        <div className="author-img">
-                          <img
-                            src="assets/img/author-thumbs/03.jpg"
-                            alt="Thumb"
-                          />
-                        </div>
-                        <div>
-                          <h5 className="name">Howard A. Guest</h5>
-                          <p className="position">Web Developer</p>
-                        </div>
-                      </div>
-                      <p className="testimonial-desc">
-                        Quis autem vel eum reprehenderit quiea voluptate velit
-                        essenih lestiae conseqatur veillum dolorem
-                      </p>
-                      <div className="rating-wrap">
-                        <span>Rating</span>
-                        <ul>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                        </ul>
-                      </div>
+              <div className="common-heading text-center mb-30">
+                <span className="tagline">
+                  <i className="fas fa-plus" /> clients Feedback
+                  <span className="heading-shadow-text">Testimonials</span>
+                </span>
+                <h2 className="title">{`What People's Say`}</h2>
+              </div>
+              <div className="testimonial-boxes">
+                <div
+                  className="testimonial-box-two mt-30 wow fadeInUp"
+                  data-wow-delay="0s"
+                >
+                  <div className="author-img">
+                    <img src="assets/img/author-thumbs/07.png" alt="Thumb" />
+                  </div>
+                  <div>
+                    <p className="testimonial-desc">
+                      {`"Sed perspiciat unde omnis iste natus error voluptatem
+                      accusantium dolorem audantium totam aperiam eaque quae
+                      abillo inventore veritatis Quis autem vel eum iure
+                      reprehenderit qui in ea voluptate"`}
+                    </p>
+                    <div className="author-info">
+                      <h5 className="name">Howard A. Guest</h5>
+                      <p className="position">Web Developer</p>
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-6 col-sm-10">
-                    <div
-                      className="testimonial-box-one mt-30 wow fadeInUp"
-                      data-wow-delay="0.2s"
-                    >
-                      <div className="author-info">
-                        <div className="author-img">
-                          <img
-                            src="assets/img/author-thumbs/02.jpg"
-                            alt="Thumb"
-                          />
-                        </div>
-                        <div>
-                          <h5 className="name">Howard A. Guest</h5>
-                          <p className="position">Web Developer</p>
-                        </div>
-                      </div>
-                      <p className="testimonial-desc">
-                        Quis autem vel eum reprehenderit quiea voluptate velit
-                        essenih lestiae conseqatur veillum dolorem
-                      </p>
-                      <div className="rating-wrap">
-                        <span>Rating</span>
-                        <ul>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                        </ul>
-                      </div>
+                  <div className="rating-wrap">
+                    <ul>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  className="testimonial-box-two mt-30 wow fadeInUp"
+                  data-wow-delay="0.1s"
+                >
+                  <div className="author-img">
+                    <img src="assets/img/author-thumbs/08.png" alt="Thumb" />
+                  </div>
+                  <div>
+                    <p className="testimonial-desc">
+                      {`"On the other hands denounce with righteous indignation
+                      and dislike men who are so beguiled and demoralized by the
+                      charms of pleasure of the moment, so blinded by desire,
+                      that they cannot foresee"`}
+                    </p>
+                    <div className="author-info">
+                      <h5 className="name">Randall S. Rosenow</h5>
+                      <p className="position">CEO &amp; Founder</p>
                     </div>
-                    <div
-                      className="testimonial-box-one mt-30 wow fadeInUp"
-                      data-wow-delay="0.3s"
-                    >
-                      <div className="author-info">
-                        <div className="author-img">
-                          <img
-                            src="assets/img/author-thumbs/04.jpg"
-                            alt="Thumb"
-                          />
-                        </div>
-                        <div>
-                          <h5 className="name">Howard A. Guest</h5>
-                          <p className="position">Web Developer</p>
-                        </div>
-                      </div>
-                      <p className="testimonial-desc">
-                        Quis autem vel eum reprehenderit quiea voluptate velit
-                        essenih lestiae conseqatur veillum dolorem
-                      </p>
-                      <div className="rating-wrap">
-                        <span>Rating</span>
-                        <ul>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                          <li>
-                            <i className="fas fa-star" />
-                          </li>
-                        </ul>
-                      </div>
+                  </div>
+                  <div className="rating-wrap">
+                    <ul>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  className="testimonial-box-two mt-30 wow fadeInUp"
+                  data-wow-delay="0.2s"
+                >
+                  <div className="author-img">
+                    <img src="assets/img/author-thumbs/09.png" alt="Thumb" />
+                  </div>
+                  <div>
+                    <p className="testimonial-desc">
+                      {`"At vero eoset accusamus et iusto odio dignissimos ducimus
+                      blandit praesentium voluptatum deleniti atque corrupti
+                      quos dolores et quastiy molestias excepturi sint occaecati
+                      cupiditate"`}
+                    </p>
+                    <div className="author-info">
+                      <h5 className="name">Christopher D. Greer</h5>
+                      <p className="position">Senior Manager</p>
                     </div>
+                  </div>
+                  <div className="rating-wrap">
+                    <ul>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                      <li>
+                        <i className="fas fa-star" />
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -984,320 +772,130 @@ const Index = () => {
         </div>
       </section>
       {/*====== Testimonials End ======*/}
-      {/*====== Emergency Project & CTA Start ======*/}
-      <section className="emergency-project-with-cta">
-        <div className="container">
-          {/* Call to Action */}
-          <div
-            className="cta-box cta-double-content"
-            style={{ backgroundImage: "url(assets/img/cta/01.jpg)" }}
-          >
-            <div className="row justify-content-center">
-              <div className="col-xl-4 col-lg-5 col-md-9">
-                <div className="content">
-                  <h2 className="cta-title">Get Funding And Support</h2>
-                  <p>
-                    Sed perspiciatis unde omniste natus error sit voluptatem
-                    accusantium doloremque laudan totamrem aperiam eaque quae
-                    abille
-                  </p>
-                  <Link href="/events">
-                    <a className="main-btn">
-                      Start a Funden <i className="far fa-arrow-right" />
-                    </a>
-                  </Link>
-                </div>
-              </div>
-              <div className="col-xl-2 col-lg-1 cta-double-content-gap" />
-              <div className="col-xl-4 col-lg-5 col-md-9">
-                <div className="content">
-                  <h2 className="cta-title">Access Data And Insights</h2>
-                  <p>
-                    Sed perspiciatis unde omniste natus error sit voluptatem
-                    accusantium doloremque laudan totamrem aperiam eaque quae
-                    abille
-                  </p>
-                  <Link href="/events">
-                    <a className="main-btn">
-                      Start a Funden <i className="far fa-arrow-right" />
-                    </a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="emergency-project-slider">
+      {/*====== Partners Section With CTA Start ======*/}
+      <section className="partners-with-cta">
+        <div className="cta-boxes">
           <div className="container">
-            <div className="common-heading text-center mb-60">
-              <span className="tagline">
-                <i className="fas fa-plus" /> Donate Projects
-                <span className="heading-shadow-text">Donate</span>
-              </span>
-              <h2 className="title">Emergency Needed</h2>
+            <div className="row no-gutters justify-content-center">
+              <div className="col-lg-6 col-md-10">
+                <div
+                  className="cta-box cta-primary-overly"
+                  style={{ backgroundImage: "url(assets/img/cta/02.jpg)" }}
+                >
+                  <h2 className="cta-title">Start Fundraising?</h2>
+                  <p>
+                    Quis autem vel eum iure reprehenderit quien voluptate velit
+                    esse quam nihil molestiae consequatur illum dolorem
+                  </p>
+                  <Link href="/events">
+                    <a className="main-btn btn-white">
+                      Start a Funden <i className="far fa-arrow-right" />
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="col-lg-6 col-md-10">
+                <div
+                  className="cta-box mt-40"
+                  style={{ backgroundImage: "url(assets/img/cta/03.jpg)" }}
+                >
+                  <h2 className="cta-title">Start Fundraising?</h2>
+                  <p>
+                    Quis autem vel eum iure reprehenderit quien voluptate velit
+                    esse quam nihil molestiae consequatur illum dolorem
+                  </p>
+                  <Link href="/events">
+                    <a className="main-btn">
+                      Start a Funden <i className="far fa-arrow-right" />
+                    </a>
+                  </Link>
+                </div>
+              </div>
             </div>
-            <Slider
-              {...projectSliderTwo}
-              className="row project-slider-two project-items project-style-four"
-            >
-              <div className="col">
-                <div className="project-item">
-                  <div
-                    className="thumb"
-                    style={{
-                      backgroundImage:
-                        "url(assets/img/project/project-slider-01.jpg)",
-                    }}
-                  />
-                  <div className="content">
-                    <div className="cats">
-                      <Link href="/project-1">Covid -19</Link>
-                    </div>
-                    <div className="author">
-                      <img src="assets/img/author-thumbs/01.jpg" alt="Thumb" />
-                      <Link href="/project-details">James W. Barrows</Link>
-                    </div>
-                    <h5 className="title">
-                      <Link href="/project-details">
-                        <a>
-                          Fundraising For The People And Causes You Car About
-                        </a>
-                      </Link>
-                    </h5>
-                    <div className="project-stats">
-                      <div className="stats-value">
-                        <span className="value-title">
-                          Raised of <span className="value">$59,689</span>
-                        </span>
-                        <span className="stats-percentage">83%</span>
-                      </div>
-                      <div className="stats-bar" data-value={90}>
-                        <div className="bar-line" />
-                      </div>
-                    </div>
-                    <span className="date">
-                      <i className="far fa-calendar-alt" /> 25 February 2021
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="project-item">
-                  <div
-                    className="thumb"
-                    style={{
-                      backgroundImage:
-                        "url(assets/img/project/project-slider-02.jpg)",
-                    }}
-                  />
-                  <div className="content">
-                    <div className="cats">
-                      <Link href="/project-1">Covid -19</Link>
-                    </div>
-                    <div className="author">
-                      <img src="assets/img/author-thumbs/01.jpg" alt="Thumb" />
-                      <Link href="/project-details">James W. Barrows</Link>
-                    </div>
-                    <h5 className="title">
-                      <Link href="/project-details">
-                        <a>
-                          Fundraising For The People And Causes You Car About
-                        </a>
-                      </Link>
-                    </h5>
-                    <div className="project-stats">
-                      <div className="stats-value">
-                        <span className="value-title">
-                          Raised of <span className="value">$59,689</span>
-                        </span>
-                        <span className="stats-percentage">83%</span>
-                      </div>
-                      <div className="stats-bar" data-value={90}>
-                        <div className="bar-line" />
-                      </div>
-                    </div>
-                    <span className="date">
-                      <i className="far fa-calendar-alt" /> 25 February 2021
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="project-item">
-                  <div
-                    className="thumb"
-                    style={{
-                      backgroundImage:
-                        "url(assets/img/project/project-slider-01.jpg)",
-                    }}
-                  />
-                  <div className="content">
-                    <div className="cats">
-                      <Link href="/project-1">Covid -19</Link>
-                    </div>
-                    <div className="author">
-                      <img src="assets/img/author-thumbs/01.jpg" alt="Thumb" />
-                      <Link href="/project-details">James W. Barrows</Link>
-                    </div>
-                    <h5 className="title">
-                      <Link href="/project-details">
-                        <a>
-                          Fundraising For The People And Causes You Car About
-                        </a>
-                      </Link>
-                    </h5>
-                    <div className="project-stats">
-                      <div className="stats-value">
-                        <span className="value-title">
-                          Raised of <span className="value">$59,689</span>
-                        </span>
-                        <span className="stats-percentage">83%</span>
-                      </div>
-                      <div className="stats-bar" data-value={90}>
-                        <div className="bar-line" />
-                      </div>
-                    </div>
-                    <span className="date">
-                      <i className="far fa-calendar-alt" /> 25 February 2021
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="col">
-                <div className="project-item">
-                  <div
-                    className="thumb"
-                    style={{
-                      backgroundImage:
-                        "url(assets/img/project/project-slider-02.jpg)",
-                    }}
-                  />
-                  <div className="content">
-                    <div className="cats">
-                      <Link href="/project-1">Covid -19</Link>
-                    </div>
-                    <div className="author">
-                      <img src="assets/img/author-thumbs/01.jpg" alt="Thumb" />
-                      <Link href="/project-details">James W. Barrows</Link>
-                    </div>
-                    <h5 className="title">
-                      <Link href="/project-details">
-                        <a>
-                          Fundraising For The People And Causes You Car About
-                        </a>
-                      </Link>
-                    </h5>
-                    <div className="project-stats">
-                      <div className="stats-value">
-                        <span className="value-title">
-                          Raised of <span className="value">$59,689</span>
-                        </span>
-                        <span className="stats-percentage">83%</span>
-                      </div>
-                      <div className="stats-bar" data-value={90}>
-                        <div className="bar-line" />
-                      </div>
-                    </div>
-                    <span className="date">
-                      <i className="far fa-calendar-alt" /> 25 February 2021
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Slider>
           </div>
         </div>
-      </section>
-      {/*====== Emergency Project & CTA End ======*/}
-      {/*====== Partners Section Start ======*/}
-      <section className="partners-section section-gap section-border-bottom">
-        <div className="container">
-          <div className="common-heading mb-30">
-            <span className="tagline">
-              <i className="fas fa-plus" /> Our Partners
-              <span className="heading-shadow-text">Partners</span>
-            </span>
-            <h2 className="title">Trusted Partners</h2>
-          </div>
-          <div className="row partners-logos-one">
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="logo mt-30">
-                <Link href="/testimonial">
-                  <a>
-                    <img src="assets/img/partners/01.png" alt="Image" />
-                  </a>
-                </Link>
+        <div className="partners-logos">
+          <div className="container">
+            <div className="row partners-logos-two">
+              <div className="col-lg-3 col-md-4 col-sm-6">
+                <div className="logo mb-30">
+                  <Link href="/testimonial">
+                    <a>
+                      <img src="assets/img/partners/01.png" alt="Image" />
+                    </a>
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="logo mt-30">
-                <Link href="/testimonial">
-                  <a>
-                    <img src="assets/img/partners/02.png" alt="Image" />
-                  </a>
-                </Link>
+              <div className="col-lg-3 col-md-4 col-sm-6">
+                <div className="logo mb-30">
+                  <Link href="/testimonial">
+                    <a>
+                      <img src="assets/img/partners/02.png" alt="Image" />
+                    </a>
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="logo mt-30">
-                <Link href="/testimonial">
-                  <a>
-                    <img src="assets/img/partners/03.png" alt="Image" />
-                  </a>
-                </Link>
+              <div className="col-lg-3 col-md-4 col-sm-6">
+                <div className="logo mb-30">
+                  <Link href="/testimonial">
+                    <a>
+                      <img src="assets/img/partners/03.png" alt="Image" />
+                    </a>
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="logo mt-30">
-                <Link href="/testimonial">
-                  <a>
-                    <img src="assets/img/partners/04.png" alt="Image" />
-                  </a>
-                </Link>
+              <div className="col-lg-3 col-md-4 col-sm-6">
+                <div className="logo mb-30">
+                  <Link href="/testimonial">
+                    <a>
+                      <img src="assets/img/partners/04.png" alt="Image" />
+                    </a>
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="logo mt-30">
-                <Link href="/testimonial">
-                  <a>
-                    <img src="assets/img/partners/05.png" alt="Image" />
-                  </a>
-                </Link>
+              <div className="col-lg-3 col-md-4 col-sm-6">
+                <div className="logo mb-30">
+                  <Link href="/testimonial">
+                    <a>
+                      <img src="assets/img/partners/05.png" alt="Image" />
+                    </a>
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="logo mt-30">
-                <Link href="/testimonial">
-                  <a>
-                    <img src="assets/img/partners/06.png" alt="Image" />
-                  </a>
-                </Link>
+              <div className="col-lg-3 col-md-4 col-sm-6">
+                <div className="logo mb-30">
+                  <Link href="/testimonial">
+                    <a>
+                      <img src="assets/img/partners/06.png" alt="Image" />
+                    </a>
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="logo mt-30">
-                <Link href="/testimonial">
-                  <a>
-                    <img src="assets/img/partners/07.png" alt="Image" />
-                  </a>
-                </Link>
+              <div className="col-lg-3 col-md-4 col-sm-6">
+                <div className="logo mb-30">
+                  <Link href="/testimonial">
+                    <a>
+                      <img src="assets/img/partners/07.png" alt="Image" />
+                    </a>
+                  </Link>
+                </div>
               </div>
-            </div>
-            <div className="col-lg-3 col-md-4 col-sm-6">
-              <div className="logo mt-30">
-                <Link href="/testimonial">
-                  <a>
-                    <img src="assets/img/partners/08.png" alt="Image" />
-                  </a>
-                </Link>
+              <div className="col-lg-3 col-md-4 col-sm-6">
+                <div className="logo mb-30">
+                  <Link href="/testimonial">
+                    <a>
+                      <img src="assets/img/partners/08.png" alt="Image" />
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/*====== Partners Section End ======*/}
+      {/*====== Partners Section With CTA End ======*/}
       {/*====== Latest News Start ======*/}
-      <section className="latest-blog-section section-gap">
+      <section className="latest-blog-section section-gap-extra-bottom">
         <div className="container">
           <div className="common-heading text-center mb-30">
             <span className="tagline">
@@ -1306,7 +904,7 @@ const Index = () => {
             </span>
             <h2 className="title">Get Every Single Update</h2>
           </div>
-          <div className="row justify-content-center latest-blog-posts style-one">
+          <div className="row justify-content-center latest-blog-posts style-two">
             <div
               className="col-lg-4 col-md-6 col-sm-9 col-11 wow fadeInUp"
               data-wow-delay="0.1s"
@@ -1388,8 +986,10 @@ const Index = () => {
           </div>
         </div>
       </section>
+      {/*====== Latest News End ======*/}
+      {/*====== Footer Start ======*/}
     </Layout>
   );
 };
 
-export default Index;
+export default Index2;
